@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 
 const morningSchema = new mongoose.Schema({
     category: String,
-    item: String,
-    isCompleted: Boolean,
+    routine: String,
+    affirmation: String,
+    daysCompleted: Number,
 })
 
 const Morning = mongoose.model('Morning', morningSchema);

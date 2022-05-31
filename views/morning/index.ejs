@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Routine</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %> 
+    <main>
+        <h1>Morning Routine</h1>
+        <ul id="morning-only-list">
+            <% for(let i = 0; i < morning.length; i++) { %>
+                <li>
+                    <a href="/morning/<%= morning[i]._id %>"><%= morning[i].routine %> </a>
+                </li>
+            <% } %> 
+        </ul>
+        <a href="morning/new">Add a New Routine</a>
+    </main>
+</body>
+</html>

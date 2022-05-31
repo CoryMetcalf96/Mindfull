@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
+const morningController = require('./controllers/morning.js');
 
 
 // Database Connection + Error / Success Check
@@ -19,6 +20,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Middleware
 // Gives access to req.body to push data
 app.use(express.urlencoded( {extended: true}));
+app.use('/morning', morningController);
 
 
 // Routes / Controllers
