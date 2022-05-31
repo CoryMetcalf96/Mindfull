@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const methodOverride = require('method-override');
 const morningController = require('./controllers/morning.js');
+const nightController = require('./controllers/night.js');
 
 
 // Database Connection + Error / Success Check
@@ -23,9 +24,14 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.urlencoded( {extended: true}));
 app.use(methodOverride('_method'));
 
-// Routes / Controllers
-app.use('/morning', morningController);
 
+// Controllers
+app.use('/morning', morningController);
+app.use('/night', nightController);
+
+
+// Routes
+// Index (Home Page)
 app.get('/', (req, res) => {
     res.render('index.ejs');
 });
