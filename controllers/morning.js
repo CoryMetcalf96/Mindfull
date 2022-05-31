@@ -26,10 +26,26 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+// Update
+router.put('/:id', (req, res) => {
+    Morning.findByIdAndUpdate(req.params.id, req.body, () => {
+        res.redirect('/morning')
+    })
+})
+
 // Create
 router.post('/', (req, res) => {
     Morning.create(req.body, (err, createdMorning) => {
         res.redirect('/morning');
+    });
+});
+
+// Edit
+router.get('/:id/edit', (req, res) => {
+    Morning.findById(req.params.id, (err, foundMorning) => {
+        res.render('morning/edit.ejs', {
+            morning: foundMorning
+        });
     });
 });
 

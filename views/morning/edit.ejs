@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Your Morning Routine</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <h1>Edit Your Morning Routine</h1>
+    <main>
+        <h2>Routine Information:</h2>
+        <form action="/morning/<%= morning._id %>?_method=PUT" method="POST">
+            Category: <select name="category" id="morning-category" value="<%= morning.category %>">
+                <option value="Physical Health">Physical Health</option>
+                <option value="Mental Health">Mental Health</option>
+                <option value="Entertainment">Entertainmaint</option>
+                <option value="Mindfulness">Mindfulness</option>
+                <option value="Career">Career</option>
+                <option value="Hobby">Hobby</option>
+                <option value="Other">Other</option>
+            </select>
+            Routine: <input type="text" name="routine" value="<%= morning.routine %>"/>
+            Affirmation: <input type="text" name="affirmation" value="<%= morning.affirmation %>"/>
+            Days Completed: <input type="number" name="daysCompleted"
+            value="<%= parseInt(morning.daysCompleted) %>">
+            <input type="submit" value="Create Morning Routine" />
+        </form>
+    </main>
+</body>
+</html>
