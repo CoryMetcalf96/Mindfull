@@ -21,6 +21,12 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.urlencoded( {extended: true}));
 
 
+// Routes / Controllers
+app.get('/', (req, res) => {
+    res.render('index.ejs');
+});
+
+
 // Listen
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
