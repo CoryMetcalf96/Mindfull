@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
+const methodOverride = require('method-override');
 const morningController = require('./controllers/morning.js');
 
 
@@ -20,10 +21,11 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Middleware
 // Gives access to req.body to push data
 app.use(express.urlencoded( {extended: true}));
-app.use('/morning', morningController);
-
+app.use(methodOverride('_method'));
 
 // Routes / Controllers
+app.use('/morning', morningController);
+
 app.get('/', (req, res) => {
     res.render('index.ejs');
 });

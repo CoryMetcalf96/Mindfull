@@ -19,6 +19,13 @@ router.get('/new', (req, res) => {
     res.render('morning/new.ejs');
 });
 
+// Delete
+router.delete('/:id', (req, res) => {
+    Morning.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/morning');
+    });
+});
+
 // Create
 router.post('/', (req, res) => {
     Morning.create(req.body, (err, createdMorning) => {

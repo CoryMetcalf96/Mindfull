@@ -20,6 +20,11 @@
             <li>
                 Days Completed: #<%= morning.daysCompleted %>
             </li>
+            <div id="morning-buttons">
+                <form action="/morning/<%= morning._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Routine">
+                </form>
+            </div>
         </ul>
     </main>
 </body>
