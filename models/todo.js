@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const todoSchema = new mongoose.Scheme ({
+const todoSchema = new mongoose.Schema ({
     item: String,
     priority: String,
-    isCompleted: Boolean,
+    notes: String
 });
 
 const Todo = mongoose.model('Todo', todoSchema);

@@ -6,6 +6,7 @@ require('dotenv').config();
 const methodOverride = require('method-override');
 const morningController = require('./controllers/morning.js');
 const nightController = require('./controllers/night.js');
+const todoController = require('./controllers/todo.js');
 
 
 // Database Connection + Error / Success Check
@@ -28,7 +29,7 @@ app.use(methodOverride('_method'));
 // Controllers
 app.use('/morning', morningController);
 app.use('/night', nightController);
-
+app.use('/todo', todoController)
 
 // Routes
 // Index (Home Page)

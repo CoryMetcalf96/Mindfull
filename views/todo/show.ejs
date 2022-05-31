@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Item</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <h1><%= todo.item %></h1>
+    <main>
+        <ul>
+            <li>
+                Priority: <%= todo.priority %> 
+            </li>
+            <li>
+                Notes: <%= todo.notes %>
+            </li>
+            <div id="todo-buttons">
+                <form action="/todo/<%= todo._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="X">
+                </form>
+                <a href="/todo/<%= todo._id %>/edit">Edit</a>
+            </div>
+        </ul>
+    </main>
+</body>
+</html>
