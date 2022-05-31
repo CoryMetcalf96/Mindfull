@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Routine Description</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <h1><%= night.routine %></h1>
+    <main>
+        <ul>
+            <li>
+                Category: <%= night.category %> 
+            </li>
+            <li>
+                Affirmation: <%= night.affirmation %>
+            </li>
+            <li>
+                Days Completed: #<%= night.daysCompleted %>
+            </li>
+            <div id="night-buttons">
+                <form action="/night/<%= night._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Routine">
+                </form>
+                <a href="/night/<%= night._id %>/edit">Edit</a>
+            </div>
+        </ul>
+    </main>
+</body>
+</html>
