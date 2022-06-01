@@ -1,6 +1,6 @@
-const mongoose = requite('mongoose');
+const mongoose = require('mongoose');
 
-const journalSchema = new mongoose.Scheme({
+const journalSchema = new mongoose.Schema({
     subject: String,
     body: String,
 });

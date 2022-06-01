@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %> 
+    <main>
+        <h1>Journal Entries:</h1>
+        <a href="journal/new">Add a New Journal Entry</a>
+        <ul>
+            <% for(let i = 0; i < journal.length; i++){ %>
+                <li>
+                    <a href="/journal/<%= journal[i]._id %>"><%= journal[i].subject %> </a>
+                </li>
+            <% } %>
+        </ul>
+    </main>
+</body>
+</html>

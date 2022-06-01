@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const morningController = require('./controllers/morning.js');
 const nightController = require('./controllers/night.js');
 const todoController = require('./controllers/todo.js');
-
+const journalController = require('./controllers/journal.js')
 
 // Database Connection + Error / Success Check
 mongoose.connect(process.env.DATABASE_URL, {
@@ -29,7 +29,8 @@ app.use(methodOverride('_method'));
 // Controllers
 app.use('/morning', morningController);
 app.use('/night', nightController);
-app.use('/todo', todoController)
+app.use('/todo', todoController);
+app.use('/journal', journalController);
 
 // Routes
 // Index (Home Page)
