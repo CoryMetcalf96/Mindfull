@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/morning.css">
     <title>Morning Routine</title>
 </head>
 <body>
-    <%- include('../partials/header.ejs') %> 
+    <nav id="navigation-panel">
+        <%- include('../partials/header.ejs') %> 
+    </nav>
     <main>
         <h1>Morning Routine</h1>
         <ul id="morning-only-list">
@@ -18,7 +23,7 @@
                 </li>
             <% } %> 
         </ul>
-        <a href="morning/new">Add a New Routine</a>
+        <a id="page-change-buttons" href="morning/new">Add a New Routine</a>
     </main>
 </body>
 </html>
