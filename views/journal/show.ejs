@@ -11,6 +11,9 @@
     <h1>Journal Entry</h1>
     <h2><%= journal.subject %></h2>
     <p><%= journal.body %> </p>
-    
+    <form action="/journal/<%= journal.id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Journal Entry">
+    </form>
+    <a href="/journal/<%= journal._id %>/edit">Edit</a>
 </body>
 </html>
