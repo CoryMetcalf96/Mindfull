@@ -8,6 +8,11 @@ const morningController = require('./controllers/morning.js');
 const nightController = require('./controllers/night.js');
 const todoController = require('./controllers/todo.js');
 const journalController = require('./controllers/journal.js')
+const Morning = require('./models/morning.js')
+const Night = require('./models/night.js');
+const Todo = require('./models/todo.js')
+const Journal = require('./models/journal.js');
+
 
 // Database Connection + Error / Success Check
 mongoose.connect(process.env.DATABASE_URL, {
@@ -22,6 +27,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 // Middleware
 // Gives access to req.body to push data
+app.use(express.static("public"));
 app.use(express.urlencoded( {extended: true}));
 app.use(methodOverride('_method'));
 
@@ -35,9 +41,12 @@ app.use('/journal', journalController);
 // Routes
 // Index (Home Page)
 app.get('/', (req, res) => {
-    res.render('index.ejs');
+    Journal.find({}, (err, foundJournal) => {
+        res.render('journal/index.ejs', {
+            journal: foundJournal
+        });
+    });
 });
-
 
 // Listen
 const PORT = process.env.PORT;
