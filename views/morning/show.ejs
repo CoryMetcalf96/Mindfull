@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/morning.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300&display=swap');
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>Morning Routine Description</title>
 </head>
 <body>
     <nav id="navigation-panel">
         <%- include('../partials/header.ejs') %> 
-    </nav>
-    <h1><%= morning.routine %></h1>
+    </nav id="navigation-panel">
     <main>
-        <ul>
+        <h1><%= morning.routine %></h1>
+        <br>
+        <ul id="morning-only-list">
             <li>
                 Category: <%= morning.category %> 
             </li>
@@ -26,11 +25,12 @@
             <li>
                 Days Completed: #<%= morning.daysCompleted %>
             </li>
+            <br>
             <div id="morning-buttons">
                 <form action="/morning/<%= morning._id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete Routine">
+                    <input id="delete-button" type="submit" value="Delete Routine">
                 </form>
-                <a href="/morning/<%= morning._id %>/edit">Edit</a>
+                <a id="edit-link" href="/morning/<%= morning._id %>/edit">Edit Routine</a>
             </div>
         </ul>
     </main>

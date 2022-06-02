@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/morning.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>Morning Routine</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
         <%- include('../partials/header.ejs') %> 
     </nav>
     <main>
-        <h1>Morning Routine</h1>
+        <h1 id="subheader">Morning Routine</h1><br>
         <ul id="morning-only-list">
             <% for(let i = 0; i < morning.length; i++) { %>
                 <li>
@@ -23,6 +23,7 @@
                 </li>
             <% } %> 
         </ul>
+        <br>
         <a id="page-change-buttons" href="morning/new">Add a New Routine</a>
     </main>
 </body>

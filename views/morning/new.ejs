@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/morning.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300&display=swap');
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>New Morning Routine</title>
 </head>
+
 <body>
     <nav id="navigation-panel">
-        <%- include('../partials/header.ejs') %> 
+        <%- include('../partials/header.ejs') %>
     </nav>
-    <h1>Add a New Morning Routine:</h1>
     <main>
+        <h1>New Morning Routine:</h1>
+        <br>
         <form action="/morning" method="POST">
-            Category: <select name="category" id="morning-category">
+            Category: <select id="create" name="category" id="morning-category">
                 <option value="Physical Health">Physical Health</option>
                 <option value="Mental Health">Mental Health</option>
                 <option value="Entertainment">Entertainmaint</option>
@@ -26,11 +27,13 @@
                 <option value="Hobby">Hobby</option>
                 <option value="Other">Other</option>
             </select>
-            Routine: <input type="text" name="routine" />
-            Affirmation: <input type="text" name="affirmation" />
-            Days Completed: <input type="number" name="daysCompleted">
-            <input type="submit" value="Create Morning Routine" />
+            <br>
+            Routine: <input id="create" type="text" name="routine" /><br>
+            Affirmation: <input id="create" type="textarea" name="affirmation" /><br>
+            Days Completed: <input id="create" type="number" name="daysCompleted"><br>
+            <input id="create-button" type="submit" value=" Create Morning Routine " />
         </form>
     </main>
 </body>
+
 </html>

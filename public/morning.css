@@ -11,18 +11,30 @@ html {
     box-sizing: border-box;
 }
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 main {
+    animation: fadeInAnimation ease .8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     margin-top: 40px;
     margin-left: 300px;
     margin-right: 150px;
     padding: 20px;
-    font-size: 35px;
+    font-size: 30px;
     background-color: antiquewhite;
     border: solid;
     border-color: wheat;
     border-width: 7px;
-    border-radius: 20;
+    border-radius: 20px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, .2);
 }
 
@@ -44,8 +56,44 @@ a {
 #morning-only-list {
     list-style-type: none;
 }
+
 #page-change-buttons {
     color: navy;
-    text-decoration: underline;
     font-size: 25px;
+}
+
+#delete-button {
+    font-size: 25px;
+    background-color: rgb(220, 163, 163);
+}
+
+#delete-button:hover {
+    background-color: rgb(241, 210, 210);
+    cursor: pointer;
+}
+
+#edit-link {
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+#morning-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#create {
+    font-size: 25px;
+}
+
+#create-button {
+    font-size: 20px;
+    background-color: wheat;
+}
+
+#create-button:hover {
+    background-color: rgb(247, 237, 219);
+    cursor: pointer;
 }
