@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/todo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>New To-Do List Item</title>
 </head>
 <body>
-    <%- include('../partials/header.ejs') %>
+    <nav id="navigation-panel">
+        <%- include('../partials/header.ejs') %> 
+    </nav>
     <main>
-        <h1>Add a New Item to Your To-Do List:</h1>
+        <h1>Add a New Item:</h1>
+        <br>
         <form action="/todo" method="POST">
-            Item: <input type="text" name="item"> <br>
-            Priority: <select name="priority" id="todo-priority">
+            Item: <input id="create" type="text" name="item"> <br>
+            Priority: <select id="create" name="priority" id="todo-priority">
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
             </select> <br>
-            Notes: <input type="text" name="notes"> <br>
-            <input type="submit" value="Add to To-Do List"> <br>
+            Notes: <input id="create" type="text" name="notes"> <br>
+            <br>
+            <input id="create-button" type="submit" value=" Add to To-Do List "> <br>
         </form>
     </main>
 </body>

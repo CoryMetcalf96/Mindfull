@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/journal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>Edit Your Journal Entry</title>
 </head>
 <body>
-    <%- include('../partials/header.ejs') %>
-    <h1>Edit Your Journal Entry</h1>
+    <nav id="navigation-panel">
+        <%- include('../partials/header.ejs') %>
+    </nav>
     <main>
         <h2>Journal Information</h2><br>
         <form action="/journal/<%= journal._id %>?_method=PUT" method="POST">
-            Subject: <input type="text" name="subject" value="<%= journal.subject %>"><br>
-            Body: <input type="text" name="body" value="<%= journal.body %>"><br>
-        <input type="submit" value="Submit Changes" />
+            Subject: <input id="create" type="text" name="subject" value="<%= journal.subject %>"><br>
+            Body: <input id="create " type="text" name="body" value="<%= journal.body %>"><br>
+        <input id="create-button" type="submit" value="Submit Changes" />
         </form>
     </main>
 </body>

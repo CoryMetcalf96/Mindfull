@@ -29,7 +29,7 @@ main {
     margin-left: 300px;
     margin-right: 150px;
     padding: 20px;
-    font-size: 35px;
+    font-size: 30px;
     background-color: rgb(222, 220, 230);
     border: solid;
     border-color: rgb(200, 198, 214);
@@ -85,7 +85,7 @@ a {
     text-decoration: underline;
 }
 
-#morning-buttons {
+#night-buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -98,10 +98,10 @@ a {
 
 #create-button {
     font-size: 20px;
-    background-color: wheat;
+    background-color: rgb(200, 198, 214);
 }
 
 #create-button:hover {
-    background-color: rgb(247, 237, 219);
+    background-color: rgb(221, 220, 232);
     cursor: pointer;
 }

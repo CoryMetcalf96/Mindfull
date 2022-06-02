@@ -14,8 +14,8 @@
     <nav id="navigation-panel">
         <%- include('../partials/header.ejs') %> 
     </nav>
-    <h1><%= night.routine %></h1>
     <main>
+        <h3><%= night.routine %></h3><br>
         <ul id="night-only-list">
             <li>
                 Category: <%= night.category %> 
@@ -26,11 +26,12 @@
             <li>
                 Days Completed: #<%= night.daysCompleted %>
             </li>
+            <br>
             <div id="night-buttons">
                 <form action="/night/<%= night._id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete Routine">
+                    <input id="delete-button" type="submit" value="Delete Routine">
                 </form>
-                <a href="/night/<%= night._id %>/edit">Edit</a>
+                <a id="edit-link" href="/night/<%= night._id %>/edit">Edit</a>
             </div>
         </ul>
     </main>

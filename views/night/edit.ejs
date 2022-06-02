@@ -14,11 +14,10 @@
     <nav id="navigation-panel">
         <%- include('../partials/header.ejs') %> 
     </nav>
-    <h1>Edit Your Night Routine</h1>
     <main>
-        <h2>Routine Information:</h2>
+        <h2>Edit Your Night Routine</h2><br>
         <form action="/night/<%= night._id %>?_method=PUT" method="POST">
-            Category: <select name="category" id="night-category" value="<%= night.category %>">
+            Category: <select name="category" id="create" value="<%= night.category %>">
                 <option value="Physical Health">Physical Health</option>
                 <option value="Mental Health">Mental Health</option>
                 <option value="Entertainment">Entertainmaint</option>
@@ -27,11 +26,11 @@
                 <option value="Hobby">Hobby</option>
                 <option value="Other">Other</option>
             </select><br>
-            Routine: <input type="text" name="routine" value="<%= night.routine %>"/><br>
-            Affirmation: <input type="text" name="affirmation" value="<%= night.affirmation %>"/><br>
-            Days Completed: <input type="number" name="daysCompleted"
+            Routine: <input id="create" type="text" name="routine" value="<%= night.routine %>"/><br>
+            Affirmation: <input id="create" type="text" name="affirmation" value="<%= night.affirmation %>"/><br>
+            Days Completed: <input id="create" type="number" name="daysCompleted"
             value="<%= parseInt(night.daysCompleted) %>"><br>
-            <input type="submit" value="Create Night Routine" />
+            <input id="create-button" type="submit" value="Edit Night Routine" />
         </form>
     </main>
 </body>

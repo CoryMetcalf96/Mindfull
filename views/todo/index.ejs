@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/todo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>To-Do List</title>
 </head>
+
 <body>
-    <%- include('../partials/header.ejs') %>
+    <nav id="navigation-panel">
+        <%- include('../partials/header.ejs') %>
+    </nav>
     <main>
-        <h1>To-Do List:</h1>
-        <a href="/todo/new">Add to Your To-Do List</a>
-        <ul>
-            <% for(let i = 0; i < todo.length; i++){ %>
-            <li>
-                <a href="/todo/<%=todo[i]._id%>"><%= todo[i].item %></a> 
-            </li>
-            <% } %>
+        <h2>To-Do List:</h2>
+        <br>
+        <ul id="morning-only-list">
+            <% for(let i=0; i < todo.length; i++){ %>
+                <li>
+                    <a href="/todo/<%=todo[i]._id%>">
+                        <%= todo[i].item %>
+                    </a>
+                </li>
+                <% } %>
         </ul>
+        <br>
+        <a id="page-change-buttons" href="/todo/new">Add to Your To-Do List</a>
     </main>
 </body>
+
 </html>

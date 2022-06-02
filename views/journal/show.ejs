@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/journal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>View Journal Entry</title>
 </head>
 <body>
-    <%- include('../partials/header.ejs') %>
-    <h1>Journal Entry</h1>
-    <h2><%= journal.subject %></h2>
-    <p><%= journal.body %> </p>
-    <form action="/journal/<%= journal.id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Journal Entry">
-    </form>
-    <a href="/journal/<%= journal._id %>/edit">Edit</a>
+    <nav id="navigation-panel">
+        <%- include('../partials/header.ejs') %>
+    </nav>
+    <main>
+        <h1>Journal Entry</h1>
+        <br>
+        <h2><%= journal.subject %></h2>
+        <p><%= journal.body %> </p>
+        <br>
+        <div id="journal-buttons">
+            <form action="/journal/<%= journal.id %>?_method=DELETE" method="POST">
+                <input id="delete-button" type="submit" value="Delete Journal Entry">
+            </form>
+        <a id="edit-link" href="/journal/<%= journal._id %>/edit">Edit</a>
+    </div>
+    </main>
 </body>
 </html>
