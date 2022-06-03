@@ -45,6 +45,8 @@ Mindfull is my first attempt at building a full CRUD application- four times ove
 ## <a name="nextsteps"></a>Project Next Steps
 * Users will be able to see a summary page of every CRUD model.
 * Users will be able to log-in to the application and store data.
+* Color associations with categories and priorities
+* Journal template to look like a journal
 
 ## <a name="deployment"></a>Deployed Link
 * [Heroku Deployment](https://project-mindfull.herokuapp.com/morning)
@@ -55,4 +57,4 @@ Mindfull is my first attempt at building a full CRUD application- four times ove
     
 
 ## <a name="author"></a>About The Author
-I build applications and mini projects tied to my various interests. I look for creative solutions to real world problems and think of technical ways to address them. While no application is ever perfect I find joy in the process and all my final products!
+I've been coding since my teen years as a hobby and finally took the steps to make it a career as an adult. Everything from full CRUD applications to full-length games to iOS apps- I've dabbled in it all. I find myself comfortable with both front-end and back-end developing
